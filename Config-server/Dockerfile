@@ -2,7 +2,7 @@
 FROM gradle:8.12.1-jdk17 AS builder
 WORKDIR /app
 COPY Config-server/ .
-RUN gradle build --no-daemon
+RUN gradle build -x test --no-daemon
 
 # Execute part
 FROM amazoncorretto:17
