@@ -8,13 +8,14 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Team4-Kitcha/Config.git
+          uri: https://github.com/InspireCampTeam3/Config.git
           search-paths:
             - article
             - auth
             - board
             - eureka
             - gateway
+            - interest
 
 server:
   port: 8071
@@ -22,4 +23,13 @@ server:
 
 encrypt:
   key: WeAreTestOurProjectSoHappyUmmReally
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka:8761/eureka/
 
