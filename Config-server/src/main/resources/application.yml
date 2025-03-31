@@ -16,6 +16,7 @@ spring:
             - eureka
             - gateway
             - interest
+            - file
 
 server:
   port: 8071
