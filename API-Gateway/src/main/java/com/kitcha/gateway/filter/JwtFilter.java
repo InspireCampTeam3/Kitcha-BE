@@ -29,8 +29,8 @@ public class JwtFilter implements GlobalFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String path = exchange.getRequest().getURI().getPath();
 
-        // 인증 서비스는 토큰이 없어도 통과
-        if (path.startsWith("/authentication/users") && !path.startsWith("/authentication/users/interest")) {
+        // 인증 서비스, 내부 서비스는 토큰이 없어도 통과
+        if (path.startsWith("/authentication/users")) {
             return chain.filter(exchange);
         }
 
